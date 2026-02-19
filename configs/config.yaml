@@ -1,0 +1,22 @@
+model:
+  base_model: "en_core_web_lg"
+  pipeline: ["ner", "entity_ruler"]
+
+labels:
+  - PERSON
+  - ORGANIZATION
+  - LOCATION
+  - PRODUCT
+  - MONEY
+  - DATE
+
+training:
+  epochs: 30
+  batch_size: 32
+  dropout: 0.35
+  learning_rate: 0.001
+  patience: 5
+
+entity_ruler:
+  overwrite_ents: false
+  validate: true
