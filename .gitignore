@@ -1,45 +1,66 @@
-# Python
+
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg-info/
-dist/
-build/
-eggs/
-*.egg
-
-# Virtual environments
-venv/
-env/
-.venv/
-.env
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# SpaCy models
-models/
-output/
-*.spacy
-
-# Data
-data/
-*.jsonl
-*.iob
-
-# Logs
-logs/
-*.log
-
-# OS files
+!.env.example
+!.env.sample
+.build/
 .DS_Store
-Thumbs.db
-
+.eggs/
+.env
+.env.*
+.idea/
+.swiftpm/
+.venv/
+.vscode/
+*.app
+*.db
+*.db-shm
+*.db-wal
+*.egg
+*.egg-info/
+*.iob
+*.ipa
+*.jsonl
+*.key
+*.log
+*.pem
+*.py[cod]
+*.pyc
+*.secret
+*.so
+*.spacy
+*.sqlite
+*.sqlite3
+*.swo
+*.swp
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*~
+*$py.class
+# Build
+# Data
+# Databases
+# Dependencies
+# IDE
+# Logs
+# OS
+# OS files
+# Python
+# Secrets
+# SpaCy models
 # Training artifacts
+# Virtual environments
+build/
+credentials*
+data/
+DerivedData/
+dist/
+eggs/
+env/
+logs/
+models/
+node_modules/
+output/
+Thumbs.db
 training/
+venv/
 wandb/
