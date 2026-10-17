@@ -1,6 +1,6 @@
 # Custom NER with SpaCy
 
-Lightweight, production-ready Named Entity Recognition using SpaCy. Implements a custom training pipeline combining rule-based matching, statistical NER, and entity pattern matching for low-latency inference in production environments.
+Lightweight Named Entity Recognition using SpaCy. Implements a custom training pipeline combining rule-based matching, statistical NER, and entity pattern matching for low-latency inference.
 
 ## Architecture
 
@@ -25,19 +25,18 @@ SpaCy Pipeline
 Extracted Entities [(text, label, start, end), ...]
 ```
 
-## Comparison with Transformer-Based NER (Production Choice)
+## Comparison with Transformer-Based NER (Primary Approach)
 
-| Feature | SpaCy NER (this project) | Transformer NER (production) |
+| Feature | SpaCy NER (this project) | Transformer NER (`nlp-ner-transformers`) |
 |---------|-------------------------|------------------------------|
 | Architecture | CNN/transition-based | BERT/RoBERTa fine-tuned |
-| Inference Latency | ~1-3ms per document | ~15-50ms per document |
+| Inference Latency | Lower (CPU-friendly) | Higher (GPU recommended) |
 | Training Data Needed | Moderate (500+ examples) | Low (few-shot capable) |
 | Domain Adaptation | Requires substantial data | Better with limited data |
 | Model Size | ~50-200 MB | ~400-1500 MB |
-| Accuracy (F1) | 85-90% (domain-specific) | 90-95% (domain-specific) |
 | Deployment | Simple (pip install) | GPU recommended |
 
-**Decision:** Transformer-based NER was chosen for production to achieve higher accuracy on domain-specific entities with limited training data. SpaCy NER remains a strong choice for high-throughput scenarios where latency is critical and sufficient training data is available.
+**Decision:** Transformer-based NER was chosen as the primary approach because it generally adapts better to domain-specific entities with limited training data (not benchmarked in these repositories). SpaCy NER remains a strong choice for high-throughput scenarios where latency is critical and sufficient training data is available.
 
 ## Setup
 
